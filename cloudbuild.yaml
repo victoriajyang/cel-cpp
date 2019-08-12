@@ -13,7 +13,7 @@ steps:
           args: ['cp', '-r', '_DATE', 'gs://cel-conformance']
         - name: 'gcr.io/cloud-builders/bazel'
           # run conformance tests with bazel
-          args: ['test', '--test_output=all', 'simple-test.sh']
+          args: ['test', '--test_output=all', 'conformance/simple-test.sh']
         - name: 'ubuntu'
           # creates necessary format and folder structure for TestGrid to parse
           args: ['bash', 'conformance/zip.sh']
