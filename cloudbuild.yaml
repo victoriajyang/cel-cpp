@@ -14,6 +14,7 @@ steps:
         - name: 'gcr.io/cloud-builders/bazel'
           # run conformance tests with bazel
           args: ['test', '--test_output=all', 'conformance/simple-test.sh']
+          timeout: '1200s' # extend timeout, default is 10 min
         - name: 'ubuntu'
           # creates necessary format and folder structure for TestGrid to parse
           args: ['bash', 'conformance/zip.sh']
