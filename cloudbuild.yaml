@@ -14,7 +14,7 @@ steps:
         - name: 'gcr.io/cloud-builders/bazel'
           # run conformance tests with bazel
           args: ['test', '--test_output=all', 'conformance/simple-test.sh']
-          timeout: '1200s' # extend timeout, default is 10 min
+          timeout: '1200s' # extend timeout of this step, default is 10 min
         - name: 'ubuntu'
           # creates necessary format and folder structure for TestGrid to parse
           args: ['bash', 'conformance/zip.sh']
@@ -22,3 +22,4 @@ steps:
           entrypoint: sh
           # deploys folder of test results (with build id as folder name) to GCS
           args: ['-c', 'gsutil cp -r $(cat _DATE) gs://cel-conformance/cpp-test-logs/']
+timeout: '1200s' # overall build timeout
