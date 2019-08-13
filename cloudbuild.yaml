@@ -7,7 +7,7 @@ steps:
         - name: 'ubuntu'
           args: ['ls', '-la']
         - name: 'ubuntu'
-          args: ['tar', 'xvz', 'xz-5.2.4.tar.gz']
+          args: ['tar', 'xvzf', 'xz-5.2.4.tar.gz']
         - name: 'ubuntu'
           args: ['ls']
         - name: 'ubuntu'
