@@ -5,6 +5,8 @@ steps:
         - name: 'gcr.io/cloud_builders/wget'
           args: ['http://tukaani.org/xz/xz-5.2.4.tar.gz']
         - name: 'ubuntu'
+          args: ['tar', 'xvz', 'xz-5.2.4.tar.gz']
+        - name: 'ubuntu'
           args: ['ls']
         - name: 'ubuntu'
           args: ['cd', 'xz-5.2.4']
@@ -15,7 +17,7 @@ steps:
         - name: 'ubuntu'
           args: ['make', 'install']
         - name: 'ubuntu'
-          args: ['tar', '-xvf', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz']
+          args: ['tar', 'xvf', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz']
         - name: 'ubuntu'
           args: ['mv', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz', '/usr/local']
         - name: 'ubuntu'
