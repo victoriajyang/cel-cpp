@@ -2,15 +2,10 @@
 steps:
         - name: 'gcr.io/cloud_builders/wget'
           args: ['http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz']
-          #   - name: 'ubuntu'
-          #          args: ['tar', 'xf', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz']
         - name: 'ubuntu'
-          args: ['mv', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz', 'clang_8.0.0']
+          args: ['tar', '-xvf', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz']
         - name: 'ubuntu'
-          args: ['mv', 'clang_8.0.0', '/usr/local']
-        - name: 'ubuntu'
-          args: ['export PATH=/usr/local/clang_8.0.0/bin:$PATH']
-          # export LD_LIBRARY_PATH=/usr/local/clang_8.0.0/lib:$LD_LIBRARY_PATH
+          args: ['mv', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz', '/usr/local']
         - name: 'ubuntu'
           # writes start time and #PR to started.json
           args: ['bash', 'conformance/start.sh', '$COMMIT_SHA']
