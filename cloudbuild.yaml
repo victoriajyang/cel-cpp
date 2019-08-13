@@ -9,8 +9,7 @@ steps:
         - name: 'ubuntu'
           args: ['mv', 'clang_8.0.0', '/usr/local']
         - name: 'ubuntu'
-          args: ['ls']
-          # export PATH=/usr/local/clang_8.0.0/bin:$PATH
+          args: ['export PATH=/usr/local/clang_8.0.0/bin:$PATH']
           # export LD_LIBRARY_PATH=/usr/local/clang_8.0.0/lib:$LD_LIBRARY_PATH
         - name: 'ubuntu'
           # writes start time and #PR to started.json
