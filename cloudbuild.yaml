@@ -1,5 +1,11 @@
 # Used by Google Cloud Build to run cel-cpp conformance tests and generate necesary file structure for TestGrid dashboard in Google Cloud Storage
 steps:
+        - name: 'gcr.io/cloud_builders/curl'
+          args: ['-SL', 'http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz', '|', 'tar', '-xJC', '.']
+        - name: 'ubuntu'
+          args: ['mv', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz', 'clang_8.0.0']
+        - name: 'ubuntu'
+          args: ['mv', 'clang_8.0.0', '/usr/local']
         - name: 'ubuntu'
           # writes start time and #PR to started.json
           args: ['bash', 'conformance/start.sh', '$COMMIT_SHA']
@@ -11,10 +17,10 @@ steps:
         - name: 'gcr.io/cloud-builders/gsutil'
           # writes _DATE to GCS bucket so it can be used as GCS folder name
           args: ['cp', '-r', '_DATE', 'gs://cel-conformance']
-        - name: 'gcr.io/cloud-builders/bazel'
+          #   - name: 'gcr.io/cloud-builders/bazel'
           # run conformance tests with bazel
-          args: ['test', '--test_output=all', 'conformance/simple-test.sh']
-          timeout: '1200s' # extend timeout of this step, default is 10 min
+          #   args: ['test', '--test_output=all', 'conformance/simple-test.sh']
+          #   timeout: '1200s' # extend timeout of this step, default is 10 min
         - name: 'ubuntu'
           # creates necessary format and folder structure for TestGrid to parse
           args: ['bash', 'conformance/zip.sh']
