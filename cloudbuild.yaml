@@ -5,6 +5,8 @@ steps:
         - name: 'gcr.io/cloud_builders/wget'
           args: ['http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz']
         - name: 'ubuntu'
+          args: ['ls', '-la']
+        - name: 'ubuntu'
           args: ['tar', 'xvz', 'xz-5.2.4.tar.gz']
         - name: 'ubuntu'
           args: ['ls']
