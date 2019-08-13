@@ -5,21 +5,21 @@ steps:
         - name: 'gcr.io/cloud_builders/wget'
           args: ['http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz']
         - name: 'ubuntu'
-          args: ['ls', '-la']
-        - name: 'ubuntu'
-          args: ['tar', 'xvzf', 'xz-5.2.4.tar.gz']
-        - name: 'ubuntu'
-          args: ['ls']
-        - name: 'ubuntu'
-          args: ['bash', '-c', 'cd', 'xz-5.2.4']
-        - name: 'ubuntu'
-          args: ['ls']
-        - name: 'ubuntu'
-          args: ['./configure']
-        - name: 'ubuntu'
-          args: ['make']
-        - name: 'ubuntu'
-          args: ['make', 'install']
+          args: ['bash', 'xz.sh']
+          #  - name: 'ubuntu'
+          #   args: ['tar', 'xvzf', 'xz-5.2.4.tar.gz']
+          #  - name: 'ubuntu'
+          #    args: ['ls']
+          #    - name: 'ubuntu'
+          #   args: ['bash', '-c', 'cd', 'xz-5.2.4']
+          #  - name: 'ubuntu'
+          #   args: ['ls']
+          #  - name: 'ubuntu'
+          #   args: ['./xz-5.2.4/configure']
+          # - name: 'ubuntu'
+          #   args: ['make']
+          # - name: 'ubuntu'
+          #  args: ['make', 'install']
         - name: 'ubuntu'
           args: ['tar', 'xvf', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz']
         - name: 'ubuntu'
