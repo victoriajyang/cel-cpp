@@ -9,6 +9,8 @@ steps:
         - name: 'ubuntu'
           args: ['tar', 'xvzf', 'xz-5.2.4.tar.gz']
         - name: 'ubuntu'
+          args: ['ls']
+        - name: 'ubuntu'
           args: ['bash', 'cd', 'xz-5.2.4']
         - name: 'ubuntu'
           args: ['ls']
