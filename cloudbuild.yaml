@@ -1,7 +1,7 @@
 # Used by Google Cloud Build to run cel-cpp conformance tests and generate necesary file structure for TestGrid dashboard in Google Cloud Storage
 steps:
         - name: 'gcr.io/cloud_builders/curl'
-          args: ['-SL', 'http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz', '|', 'tar', '-xvf', '.']
+          args: ['-SL', 'http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz', '|', 'tar', '-xzf', '.']
         - name: 'ubuntu'
           args: ['mv', 'clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz', 'clang_8.0.0']
         - name: 'ubuntu'
